@@ -24,6 +24,8 @@ Team Members :
    interesting approach to tune these matrices could be a learning based approach using RL or deep learning.
     
 # Electronics
+https://www.tinkercad.com/things/1sFjNN0IELB?sharecode=-p0JC6Yf4_8ywLDpMVdoLF_Q2GTN4UgzL0M0f2eAFcY
+
 We have minimised the use of Arduino. The electronics part of our design has mainly 4 sections, we will go though each of them in detail.
 
 Section1: The Sender Coil
