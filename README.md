@@ -11,11 +11,11 @@ Team Members :
 
 
 # Automation (Perception, Planning and Control)
-1) **Planning** : 
+1) **Planning** :  
    We've implemented RRT and A* path planning algorithms to solve the presented problem. For A* grid generation, we have implemented a hardcoded regular grid as well as a PRM (ProbabIlistic Random Mapping) based approach. Since the given maze
    is relatively rectangular the harcoded grid approach tends to provide the best results. The density of the grid can be altered by modifying a single value in the code.
 
-3) **Control** : 
+3) **Control** :  
    After an unsuccessful attempt at implementing PID for the problem, we switched to LQR (Linear Quadratic Regulator). This made more sense given the multi-variable control nature of the problem. LQR utilizes a state space model of the
    system where the state matrix consists of the x coordinate, y coordinate and the yaw angle while the control input matrix consists of linear velocity and angular velocity. LQR operates by solving the quadratic Ricatti loss equation for
    stable poles to find the gain matrix K. The controller input is then calculated as (scaled reference) - (K * X), where X is the current state vector.
@@ -23,6 +23,11 @@ Team Members :
 
    As can be observed in the provided video, the robot tries to rigorously follow the path planned and hence can be slow at certain points while trying to calibrate. This can be further improved by fine tuning the Q and R matrices. One more
    interesting approach to tune these matrices could be a learning based approach using RL or deep learning.
+
+4) **Perception** : 
+   For colour detection we're converting the image obtained from the camera to an HSV colour space. This is beneficial since HSV visualizes colours in a cylindrical colour space which helps in detecting colours in a range. Hence we
+   create a mask with appropriate colour ranges for the blue and red cones and take a bitwise and with the original image. We then set a threshold for the whitespace in the image and say that the cone is detected when the threshold is passed.
+   We can hence display the appropriate message in the terminal.
     
 # Electronics
 **TinkerCad Link :**  
@@ -41,8 +46,9 @@ Using L293D ic.
 
 **Section4: Seven Segment Display and Buzzer**  
 Implementation of the Seven Segment display and Buzzer using Arduino and resistors of 220 ohms each.
-Arduino:
+
+**Arduino :**  
 Although we have minimised the use of Arduino, it was required to receive data from ROS (Robotics Operating System). We tried to use ic555 for buzzer, but were unable to crack the given cases.
 
-# Mechanical
-This rover is made to remove mines form the ground. It uses a drill which revolves around mine to remove soil around the mine. Then the two arms are sent inside the hole to get under the mine and lift it up. This rover has tracks to move around which work independently for it to make turn. It has long rod extension in front to detect mines inside ground.
+# Mechanical 
+The presented design for the rover is intended to loosen up the soil to remove mines form the ground. It has a rotary attachment at the front which has a drill like rod that revolves around the mine to loosen the soil around the mine. Then the two flat arms are sent inside the hole to get under the mine and lift it up and out of the ground. This rover has tracks to move around which work independently through a differential drive mechanism enabling it to maneuver tricky paths. It has long rod-like extension in front that will hold the sender and detector coils to detect mines inside the ground.
