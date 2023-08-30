@@ -7,6 +7,7 @@ Team Members :
   3) Sharvil Potdar
   4) Nayan Gogari
   5) Ritwik Sharma
+  6) Arnav Deshmukh
 
 
 # Automation (Perception, Planning and Control)
