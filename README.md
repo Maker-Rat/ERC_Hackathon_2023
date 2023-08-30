@@ -12,7 +12,7 @@ Team Members :
 # Automation (Perception, PLanning and Control)
 1) **Planning** : 
    We've implemented RRT and A* path planning algorithms to solve the presented problem. For A* grid generation, we have implemented a hardcoded regular grid as well as a PRM (ProbabIlistic Random Mapping) based approach. Since the given maze
-   is relatively rectangular the harcoded grid approach tends to provide the best results. THe density of the grid can be altered by modifying a single value in the code.
+   is relatively rectangular the harcoded grid approach tends to provide the best results. The density of the grid can be altered by modifying a single value in the code.
 
 3) **Control** : 
    After an unsuccessful attempt at implementing PID for the problem, we switched to LQR (Linear Quadratic Regulator). This made more sense given the multi-variable control nature of the problem. LQR utilizes a state space model of the
